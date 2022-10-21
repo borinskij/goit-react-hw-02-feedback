@@ -13,7 +13,7 @@ export class App extends Component {
   };
   render() {
     return (
-      <div>
+      <div style={{ margin: 50 }}>
         <Title state={this.state} hendelClick={this.hendelClick} />
       </div>
     );

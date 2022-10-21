@@ -2,7 +2,6 @@ import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions.jsx';
 import { Statistics } from '../Statistics/Statistics.jsx';
 
 export const Title = ({ state, hendelClick }) => {
-  console.log('state :');
   return (
     <>
       <h1>Please leave feedback</h1>
