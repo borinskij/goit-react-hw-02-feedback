@@ -1,4 +1,7 @@
+import PropTypes from 'prop-types';
+
 export const Statistics = ({ state }) => {
+  console.log('state :', state);
   const { good, neutral, bad } = state;
 
   let total = 0;
@@ -38,4 +41,14 @@ export const Statistics = ({ state }) => {
       </ul>
     </>
   );
+};
+
+Statistics.propTypes = {
+  state: PropTypes.objectOf(
+    PropTypes.shape({
+      good: PropTypes.number.isRequired,
+      neutral: PropTypes.number.isRequired,
+      bad: PropTypes.number.isRequired,
+    })
+  ),
 };
