@@ -14,28 +14,28 @@ export const Statistics = ({ state }) => {
     return count.toFixed(2);
   }
   countPositiveFeedbackPercentage();
-
+  if (!total) {
+    return <h3>'There is no Feedback'</h3>;
+  }
   return (
     <>
-      {<h3>'There is no Feedback'</h3> && { total } && (
-        <ul>
-          <li>
-            <span>Good</span>:{state.good}
-          </li>
-          <li>
-            <span>Neutral</span>: {state.neutral}
-          </li>
-          <li>
-            <span>Bad</span>: {state.bad}
-          </li>
-          <li>
-            <span>Total</span>: {total}
-          </li>
-          <li>
-            <span>Positive feedback</span>: {count} %
-          </li>
-        </ul>
-      )}
+      <ul>
+        <li>
+          <span>Good</span>:{state.good}
+        </li>
+        <li>
+          <span>Neutral</span>: {state.neutral}
+        </li>
+        <li>
+          <span>Bad</span>: {state.bad}
+        </li>
+        <li>
+          <span>Total</span>: {total}
+        </li>
+        <li>
+          <span>Positive feedback</span>: {count} %
+        </li>
+      </ul>
     </>
   );
 };
