@@ -1,34 +1,28 @@
-export const FeedbackOptions = ({ hendelClick }) => {
+import PropTypes from 'prop-types';
+
+export const FeedbackOptions = ({ hendelClick, options }) => {
   return (
     <div
       className="btn-group"
       role="group"
       aria-label="Basic mixed styles example"
     >
-      <button
-        type="button"
-        className="btn btn-success"
-        name="good"
-        onClick={hendelClick}
-      >
-        Good
-      </button>
-      <button
-        type="button"
-        className="btn btn-warning"
-        name="neutral"
-        onClick={hendelClick}
-      >
-        Neutral
-      </button>
-      <button
-        type="button"
-        className="btn btn-danger"
-        name="bad"
-        onClick={hendelClick}
-      >
-        Bad
-      </button>
+      {options.map(element => (
+        <button
+          key={element}
+          type="button"
+          className="btn btn-primary"
+          name={element}
+          onClick={hendelClick}
+        >
+          {element}
+        </button>
+      ))}
     </div>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  hendelClick: PropTypes.func.isRequired,
 };

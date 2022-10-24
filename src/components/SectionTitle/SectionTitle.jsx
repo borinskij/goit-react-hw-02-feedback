@@ -1,13 +1,17 @@
-import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions.jsx';
-import { Statistics } from '../Statistics/Statistics.jsx';
+import PropTypes from 'prop-types';
 
-export const Title = ({ state, hendelClick }) => {
+export const Section = ({ children, title }) => {
   return (
     <>
-      <h1>Please leave feedback</h1>
-      <FeedbackOptions hendelClick={hendelClick} />
-      <h2>Statictic</h2>
-      <Statistics state={state} />
+      <div>
+        <h2>{title}</h2>
+        {children}
+      </div>
     </>
   );
+};
+
+Section.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
